@@ -1,0 +1,16 @@
+# Dependencies and generated build output
+node_modules/
+.next/
+.vercel/
+out/
+build/
+coverage/
+*.tsbuildinfo
+
+# Local environment and logs
+.env*
+!.env.example
+*.log
+
+# Reference material is not part of the deployable application
+/reference/
