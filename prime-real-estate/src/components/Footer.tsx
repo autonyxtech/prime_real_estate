@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Instagram, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Instagram, MapPin, Phone } from "lucide-react";
 import { business, services } from "@/data/site";
 
 export function Footer() {
@@ -28,9 +28,20 @@ export function Footer() {
           <a href={`tel:${business.phone}`}><Phone size={16} />{business.phone}</a>
           <a href={business.instagram} target="_blank" rel="noreferrer"><Instagram size={16} />@prime_realestate_ahmedabad</a>
           <span><MapPin size={16} />{business.city}</span>
-          <div className="map-placeholder" aria-label="Ahmedabad location map placeholder">
-            <MapPin size={22} /><span>Ahmedabad, Gujarat</span>
-          </div>
+          <a
+            className="map-placeholder footer-map"
+            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(business.city)}`}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="View Ahmedabad, Gujarat on Google Maps"
+          >
+            <span className="footer-map-art" aria-hidden="true" />
+            <span className="footer-map-pin" aria-hidden="true"><MapPin size={23} /></span>
+            <span className="footer-map-label">
+              <strong>Ahmedabad, Gujarat</strong>
+              <span>View on Google Maps <ArrowUpRight size={14} /></span>
+            </span>
+          </a>
         </div>
       </div>
       <div className="footer-bottom section-shell">
